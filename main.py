@@ -2,7 +2,7 @@ import socket
 
 def send_request(command, data=""):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect(("127.0.0.1", 23))
+        s.connect(("127.0.0.1", 8080))
         s.sendall(f"{command}\n{data}".encode())
         response = s.recv(1024).decode()
         print(response)
